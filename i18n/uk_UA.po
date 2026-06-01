@@ -1,0 +1,1382 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* building_store
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-31 08:39+0000\n"
+"PO-Revision-Date: 2026-05-31 08:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: building_store
+#: model:ir.actions.report,print_report_name:building_store.action_report_customer_financial_statement
+msgid "'Customer_Report_%s' % (object.name)"
+msgstr "'Звіт_Клієнта_%s' % (object.name)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid ""
+"<i class=\"fa fa-credit-card\"/>\n"
+"                                <span>Repay</span>"
+msgstr ""
+"<i class=\"fa fa-credit-card\"/>\n"
+"                                <span>Погасити</span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid ""
+"<i class=\"fa fa-money text-success small\"/>\n"
+"                                <span>Cash: </span>"
+msgstr ""
+"<i class=\"fa fa-money text-success small\"/>\n"
+"                                <span>Кешбек: </span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid ""
+"<i class=\"fa fa-tags text-warning small\"/>\n"
+"                                <span>Disc: </span>"
+msgstr ""
+"<i class=\"fa fa-tags text-warning small\"/>\n"
+"                                <span>Знижка: </span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<small class=\"fs-6 text-muted\"> points</small>"
+msgstr "<small class=\"fs-6 text-muted\"> балів</small>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<small class=\"text-muted\">Materials Retail Network</small>"
+msgstr "<small class=\"text-muted\">Мережа будівельних магазинів</small>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid ""
+"<span class=\"text-muted small text-uppercase font-weight-bold\">Unified "
+"Cashback Balance</span>"
+msgstr ""
+"<span class=\"text-muted small text-uppercase font-weight-bold\">Єдиний "
+"баланс кешбеку</span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<span>Authorized Signature: _______________________</span>"
+msgstr "<span>Підпис відповідальної особи: _______________________</span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<span>Building Store Automated Audit Accounting Document</span>"
+msgstr "<span>Автоматизований аудиторський документ будівельного магазину</span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid "<span>Debt: </span>"
+msgstr "<span>Борг: </span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid "<span>Turnover: </span>"
+msgstr "<span>Оборот: </span>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<strong>Email: </strong>"
+msgstr "<strong>Ел. пошта: </strong>"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "<strong>Phone: </strong>"
+msgstr "<strong>Телефон: </strong>"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/loyalty_card.py:0
+msgid ""
+"Action Denied! Cannot block loyalty card '%s' because it has an active "
+"outstanding debt of %s. Please clear the debt via the checkout wizard first."
+msgstr ""
+"Дію відхилено! Неможливо заблокувати картку лояльності '%s', оскільки за "
+"нею рахується активний борг у розмірі %s грн. Будь ласка, спочатку погасіть "
+"заборгованість через касове вікно оплати."
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/loyalty_card.py:0
+msgid ""
+"Action Denied! Cannot manually activate card '%s' because its total sales "
+"volume is 0.00 UAH. Activation occurs automatically upon the first completed"
+" sale transaction."
+msgstr ""
+"Дію відхилено! Неможливо вручну перевести картку '%s' в статус 'Активна', "
+"оскільки її загальний оборот становить 0.00 грн. Активація відбувається "
+"автоматично при проведенні першого успішного продажу."
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/loyalty_card.py:0
+msgid ""
+"Action Denied! Cannot reset loyalty card '%s' to 'New Card' status because "
+"it already has an active sales volume of %s."
+msgstr ""
+"Дію відхилено! Неможливо скинути статус картки '%s' на 'Нова картка', "
+"оскільки за нею вже зафіксовано реальний оборот покупок у розмірі %s грн."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_needaction
+msgid "Action Needed"
+msgstr "Необхідна дія"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_loyalty_card__state__active
+msgid "Active"
+msgstr "Активна"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_search
+msgid "Active Outstanding Debt"
+msgstr "З активною заборгованістю"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Оформлення виключення дії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_state
+msgid "Activity State"
+msgstr "Стан дії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу дії"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Add a product line"
+msgstr "Додати товарний рядок"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_order
+msgid ""
+"Add store products, link loyalty card to fetch discounts, and process rapid "
+"cash desk payments."
+msgstr ""
+"Додавайте товари магазину, підв'язуйте картку лояльності для автоматичного "
+"розрахунку знижок та здійснюйте миттєві касові виплати."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__amount
+msgid "Adjustment Amount"
+msgstr "Сума коригування"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__adjustment_date
+msgid "Adjustment Date"
+msgstr "Дата коригування"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__type
+msgid "Adjustment Type"
+msgstr "Тип коригування"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__credit_limit
+msgid "Assigned Credit Limit"
+msgstr "Встановлений кредитний ліміт"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість прикріплень"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_form
+msgid "Audit Parameters"
+msgstr "Параметри аудиту"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__user_id
+msgid "Author (Administrator)"
+msgstr "Автор (Адміністратор)"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__available_cashback
+msgid "Available Cashback Points"
+msgstr "Доступні бали кешбеку"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "BUILDING STORE"
+msgstr "БУДІВЕЛЬНИЙ МАГАЗИН"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "Basic Logistics Inventory Data"
+msgstr "Базові логістичні дані номенклатури"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_loyalty_card__state__blocked
+msgid "Blocked"
+msgstr "Заблокована"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_root
+msgid "Building Store"
+msgstr "Будівельний магазин"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__name
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Card Number"
+msgstr "Номер картки"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Card Number / Code"
+msgstr "Номер / Код картки"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_search
+msgid "Card or Customer"
+msgstr "Картка або Клієнт"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Cash (%)"
+msgstr "Кешбек (%)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Cash Desk Checkout Integration Engine"
+msgstr "Інтерактивний касовий інтерфейс АРМ"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Cash Desk Payments Registry"
+msgstr "Реєстрація касових розрахунків"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_payment_wizard
+msgid "Cash Desk checkout Payment"
+msgstr "Оформити оплату чека"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__cash_paid
+msgid "Cash Money Received"
+msgstr "Внесено готівки"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__cashback_percent
+msgid "Cashback Earn (%)"
+msgstr "Відсоток кешбеку (%)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid "Cashback Percent"
+msgstr "Відсоток кешбеку"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__cashback_paid
+msgid "Cashback Points to Use"
+msgstr "Списати балів кешбеку"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__user_id
+#: model:res.groups,name:building_store.group_building_store_user
+msgid "Cashier"
+msgstr "Касир"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/wizard/payment_wizard.py:0
+msgid ""
+"Cashier Fraud Blocked! Cannot redeem more cashback (%s) than available on "
+"the customer joint single wallet balance (%s)."
+msgstr ""
+"Шахрайство касира заблоковано! Неможливо списати більше кешбеку (%s), ніж "
+"доступно на єдиному гаманці балансу клієнта (%s балів)."
+
+#. module: building_store
+#: model:bm.product,name:building_store.demo_product_cement
+msgid "Cement Bag M-500 Premium 25kg"
+msgstr "Цемент М-500 Преміум (мішок 25кг)"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__change_amount
+msgid "Change to Return"
+msgstr "Здача клієнту"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__allow_debt
+msgid ""
+"Check this box if you want to put the missing money amount into the customer"
+" debt."
+msgstr ""
+"Встановіть цей прапорець, якщо необхідно перенести суму, якої не вистачає, "
+"на заборгованість клієнта."
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_payment_wizard
+msgid "Checkout Payment Processing Wizard"
+msgstr "Помічник швидкого закриття касового чека"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_res_company
+#: model:ir.ui.menu,name:building_store.menu_action_res_company_building
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_order__state__done
+msgid "Completed Sale"
+msgstr "Проведено"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_configuration
+msgid "Configuration"
+msgstr "Налаштування"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/loyalty_card.py:0
+msgid ""
+"Configuration Error! Assigned credit limit (%s) cannot exceed the global "
+"maximum allowed credit limit defined by company settings (%s)."
+msgstr ""
+"Помилка конфігурації! Встановлений ліміт кредиту (%s) не може перевищувати "
+"максимальний глобальний ліміт ризику, затверджений налаштуваннями компанії (%s грн)."
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "Construction Product"
+msgstr "Будівельний товар"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_product
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_list
+msgid "Construction Products"
+msgstr "Товарна номенклатура"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_product
+msgid "Construction Store Product"
+msgstr "Товар будівельного магазину"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_res_partner
+msgid "Contact"
+msgstr "Контрагент (Клієнт)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Contractor Personal Profile Link"
+msgstr "Зв'язок із профілем Клієнта"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_debt_adjustment
+msgid "Create a manual debt adjustment audit record!"
+msgstr "Створіть перший документ ручного коригування заборгованості!"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_order
+msgid "Create your first construction sales check!"
+msgstr "Створіть перше роздрібне замовлення покупця на касі!"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_product
+msgid "Create your first store product item!"
+msgstr "Створіть першу картку товару в будівельному довіднику!"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_order__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__create_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_product__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_order__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__create_date
+#: model:ir.model.fields,field_description:building_store.field_bm_product__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/wizard/payment_wizard.py:0
+msgid ""
+"Credit Cap Breach! The requested credit amount will push total card debt to "
+"%s, which severely violates the assigned card credit threshold (%s)."
+msgstr ""
+"Ліміт кредиту вичерпано! Ця сума збільшить загальний борг за карткою до %s грн, "
+"що грубо порушує встановлений для цього клієнта кредитний ліміт (%s грн)."
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Credit Control and Risk Capital Limits"
+msgstr "Кредитний контроль та ліміти фінансових ризиків"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/wizard/payment_wizard.py:0
+msgid ""
+"Credit Failure! Anonymous debt accumulation is restricted. A valid non-"
+"blocked customer loyalty card must be linked to process credit sales."
+msgstr ""
+"Помилка кредитування! Накопичення анонімних боргів заборонено. "
+"Для оформлення продажу в кредит обов'язково підв'яжіть активну картку лояльності клієнта."
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Credit Risk Boundary Controls"
+msgstr "Межі контролю кредитних ризиків"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_company_form_inherit_credit_limit
+msgid "Credit Risk Configuration"
+msgstr "Налаштування фінансових лімітів компанії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__current_debt
+msgid "Current Debt Balance"
+msgstr "Поточний залишок боргу"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__partner_id
+#: model:ir.model.fields,field_description:building_store.field_bm_order__partner_id
+msgid "Customer"
+msgstr "Клієнт"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Customer Contractor Profile"
+msgstr "Картка будівельного контрагента"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_debt_ledger
+msgid "Customer Debt Transaction Ledger"
+msgstr "Регістр накопичення операцій заборгованості"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_loyalty_card
+#: model:ir.ui.menu,name:building_store.menu_action_loyalty_card
+msgid "Customer Loyalty Cards"
+msgstr "Картки лояльності клієнтів"
+
+#. module: building_store
+#: model:ir.actions.report,name:building_store.action_report_customer_financial_statement
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Customer Loyalty Program"
+msgstr "Програма лояльності будівельної мережі"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__partner_id
+msgid "Customer Name"
+msgstr "Ім'я клієнта"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_customers
+msgid "Customers & Cards"
+msgstr "Клієнти та Картки"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_action_res_partner_building
+msgid "Customers (Partners)"
+msgstr "Довідник клієнтів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_search
+msgid "Customers Filter"
+msgstr "Фільтр клієнтів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_form
+msgid "Debt Adjustment"
+msgstr "Коригування боргу"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_debt_adjustment_cash_desk
+#: model:ir.model,name:building_store.model_bm_debt_adjustment
+msgid "Debt Adjustment Document"
+msgstr "Документ коригування боргу"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_debt_adjustment
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_list
+msgid "Debt Adjustments"
+msgstr "Коригування заборгованостей"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_action_debt_ledger
+msgid "Debt Balance Ledger"
+msgstr "Оборотна відомість боргів"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_debt_ledger
+msgid "Debt Ledger Analytics"
+msgstr "Аналітика взаєморозрахунків"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_ledger_list
+msgid "Debt Ledger Movements"
+msgstr "Рухи по регістру боргів"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__debt_ledger_ids
+msgid "Debt Movements"
+msgstr "Транзакційні рухи заборгованості"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_ledger_pivot
+msgid "Debt Sub-Ledger Analysis"
+msgstr "Аналітичний куб дебіторської заборгованості"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_debt_adjustment__type__decrease
+#: model:ir.model.fields.selection,name:building_store.selection__bm_debt_ledger__direction__decrease
+msgid "Decrease Debt (-)"
+msgstr "Погашення боргу (-)"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_product
+msgid ""
+"Define product name, unique article barcode (SKU), and standard retail "
+"price."
+msgstr ""
+"Вказуйте найменування товарів, унікальні штрих-коди артикулів (SKU) та базові роздрібні ціни."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__discount_percent
+msgid "Direct discount percentage applied to order lines."
+msgstr "Відсоток прямої знижки, що автоматично розподіляється по рядках чека."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__direction
+msgid "Direction"
+msgstr "Вектор руху (Тип)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Disc (%)"
+msgstr "Знижка (%)"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__discount_percent
+#: model:ir.model.fields,field_description:building_store.field_bm_order__discount_percent
+msgid "Discount (%)"
+msgstr "Знижка (%)"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__discount_amount
+msgid "Discount Amount"
+msgstr "Сума наданої знижки"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid "Discount Percent"
+msgstr "Відсоток знижки"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_order__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__display_name
+#: model:ir.model.fields,field_description:building_store.field_bm_product__display_name
+#: model:ir.model.fields,field_description:building_store.field_res_company__display_name
+#: model:ir.model.fields,field_description:building_store.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__name
+msgid "Document Number"
+msgstr "Номер документа"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_order__state__draft
+msgid "Draft Check"
+msgstr "Чернетка чека"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Financial Accounting Inbound Core"
+msgstr "Вхідні фінансові параметри чека"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_finance
+msgid "Financial Audit"
+msgstr "Фінансовий аудит"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "Financial Retail Commercial Pricing"
+msgstr "Комерційне роздрібне ціноутворення"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/debt_adjustment.py:0
+msgid ""
+"Financial Violation! The repayment amount (%s) cannot exceed the actual "
+"outstanding debt balance on this card (%s)."
+msgstr ""
+"Фінансове порушення! Сума погашення заборгованості (%s грн) не може "
+"перевищувати фактичний залишок боргу за цією карткою (%s грн)."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка Font Awesome, наприклад fa-tasks"
+
+#. module: building_store
+#: model:bm.product,name:building_store.demo_product_roofing
+msgid "Galvanized Corrugated Roofing Sheet 2m"
+msgstr "Профнастил оцинкований хвильовий 2м"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Generated Date:"
+msgstr "Дата формування:"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__has_message
+msgid "Has Message"
+msgstr "Містить повідомлення"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__cashback_paid
+msgid ""
+"How many cashback points the customer wants to use to pay for this check."
+msgstr "Скільки балів кешбеку клієнт бажає використати для оплати цього чека."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__id
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__id
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__id
+#: model:ir.model.fields,field_description:building_store.field_bm_order__id
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__id
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__id
+#: model:ir.model.fields,field_description:building_store.field_bm_product__id
+#: model:ir.model.fields,field_description:building_store.field_res_company__id
+#: model:ir.model.fields,field_description:building_store.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для відображення виключної дії."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення вимагатимуть вашої уваги."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__message_has_error
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_debt_adjustment__type__increase
+#: model:ir.model.fields.selection,name:building_store.selection__bm_debt_ledger__direction__increase
+msgid "Increase Debt (+)"
+msgstr "Нарахування боргу (+)"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/wizard/payment_wizard.py:0
+msgid ""
+"Insufficient Funds! Received payment totals do not match the required net "
+"amount. Please fill full amount or check 'Post Balance to Debt' checkbox to "
+"proceed credit."
+msgstr ""
+"Недостатньо коштів! Внесена сума не збігається з підсумком чека. Будь ласка, "
+"внесіть повну оплату або встановіть прапорець 'Перенести залишок на борг', "
+"щоб оформити продаж у кредит."
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Invoice Context Source"
+msgstr "Первинне замовлення-підстава"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_is_follower
+msgid "Is Follower"
+msgstr "Стежить за об'єктом"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__issue_date
+msgid "Issue Date"
+msgstr "Дата видачі картки"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Issued Date"
+msgstr "Дата видачі"
+
+#. module: building_store
+#: model:bm.product,name:building_store.demo_product_plaster
+msgid "Knauf Gypsum Plasterboard 2500x1200x12.5mm"
+msgstr "Гіпсокартон Knauf стіновий 2500х1200х12.5мм"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_order__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__write_uid
+#: model:ir.model.fields,field_description:building_store.field_bm_product__write_uid
+msgid "Last Updated by"
+msgstr "Останнім змінив"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_order__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__write_date
+#: model:ir.model.fields,field_description:building_store.field_bm_product__write_date
+msgid "Last Updated on"
+msgstr "Дата останнього оновлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__order_ids
+msgid "Linked Sales Orders"
+msgstr "Пов'язані замовлення на продаж"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__card_id
+#: model:ir.model.fields,field_description:building_store.field_bm_order__card_id
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__card_id
+msgid "Loyalty Card"
+msgstr "Картка лояльності"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_res_partner__loyalty_card_ids
+#: model:ir.model.fields,field_description:building_store.field_res_users__loyalty_card_ids
+msgid "Loyalty Cards"
+msgstr "Картки лояльності"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Loyalty Program Incentive Percentages"
+msgstr "Відсотки заохочення програми лояльності"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_action_debt_adjustment
+msgid "Manual Debt Adjustments"
+msgstr "Ручні коригування боргів"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__partner_id
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__partner_id
+msgid "Master (Customer)"
+msgstr "Клієнт"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_loyalty_card
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Master Loyalty Card"
+msgstr "Картка лояльності клієнта"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_list
+msgid "Master Loyalty Cards"
+msgstr "Картки лояльності клієнтів"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__product_id
+msgid "Material (Product)"
+msgstr "Товар"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_res_company__max_global_credit_limit
+msgid "Max Global Credit Limit"
+msgstr "Максимальний глобальний ліміт кредиту"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Дедлайн моєї дії"
+
+#. module: building_store
+#: model:ir.model.fields.selection,name:building_store.selection__bm_loyalty_card__state__new
+msgid "New Card"
+msgstr "Нова картка"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__remaining_debt
+msgid "New Debt Amount"
+msgstr "Сума нового боргу"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Дедлайн наступної дії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної дії"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "No active or registered loyalty cards found."
+msgstr "Активних або зареєстрованих карток лояльності не знайдено."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які вимагають дії"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Operational Session Meta"
+msgstr "Метадані поточної касової сесії"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_operations
+msgid "Operations & Checkout"
+msgstr "Продажі та Каса"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__date_order
+msgid "Order Date"
+msgstr "Дата замовлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__order_line_ids
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Order Lines"
+msgstr "Рядки замовлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__name
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__order_id
+msgid "Order Number"
+msgstr "Номер замовлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__order_id
+msgid "Order Reference"
+msgstr "Посилання на замовлення"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__res_id
+msgid "Origin Document ID"
+msgstr "ID документа-підстави"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__res_model
+msgid "Origin Document Type"
+msgstr "Тип документа-підстави"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Outstanding Debt"
+msgstr "Залишок заборгованості"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Process Payment"
+msgstr "Провести оплату"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Process Repayment"
+msgstr "Погасити борг"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_payment_wizard_form
+msgid "Process Sale"
+msgstr "Оформити продаж"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_product__name
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "Product Name"
+msgstr "Найменування товару"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_search
+msgid "Product or SKU"
+msgstr "Товар або Артикул"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_building_store_products
+msgid "Products Inventory"
+msgstr "Складський облік товарів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Purchased Products List"
+msgstr "Специфікація куплених товарів"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__product_uom_qty
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_kanban
+msgid "Quick Repayment"
+msgstr "Швидке погашення"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "Real-Time Financial Balances (Sub-Ledger)"
+msgstr "Оперативний фінансовий баланс (Субрахунок)"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_loyalty_card
+msgid "Register your first customer loyalty card!"
+msgstr "Зареєструйте першу картку лояльності клієнта будівельної мережі!"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Registered Loyalty Cards &amp; Sub-Ledger Accounts"
+msgstr "Зареєстровані картки лояльності та аналітичні рахунки взаєморозрахунків"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_product__list_price
+msgid "Retail Price"
+msgstr "Роздрібна ціна"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_product__sku
+msgid "SKU / Article"
+msgstr "Артикул / Код товару"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Помилка доставки SMS"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_pivot
+msgid "Sales Optimization Analytics"
+msgstr "Аналітика оптимізації продажів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_form
+msgid "Sales Order"
+msgstr "Накладна продажу"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_action_store_order
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_list
+msgid "Sales Orders"
+msgstr "Журнал накладних продажів"
+
+#. module: building_store
+#: model:ir.actions.act_window,name:building_store.action_bm_order
+msgid "Sales Orders Journal"
+msgstr "Журнал замовлень на продаж"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_calendar
+msgid "Sales Orders Log"
+msgstr "Календарний лог чеків продажів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_search
+msgid "Search Construction Products"
+msgstr "Пошук будівельних товарів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_search
+msgid "Search Loyalty Cards"
+msgstr "Пошук карток лояльності"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__allow_debt
+msgid "Send Balance to Debt"
+msgstr "Перенести залишок на борг"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__state
+#: model:ir.model.fields,field_description:building_store.field_bm_order__state
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Status"
+msgstr "Статус"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі запланованих дій\n"
+"Протерміновано: Кінцева дата виконання вже минула\n"
+"Сьогодні: Термін виконання сьогодні\n"
+"Заплановано: Майбутні завдання."
+
+#. module: building_store
+#: model:res.groups,name:building_store.group_building_store_admin
+msgid "Store Administrator"
+msgstr "Адміністратор магазину"
+
+#. module: building_store
+#: model:ir.ui.menu,name:building_store.menu_action_store_product
+msgid "Store Products"
+msgstr "Товари магазину"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_order
+msgid "Store Sale Order"
+msgstr "Касовий чек продажу"
+
+#. module: building_store
+#: model:ir.model,name:building_store.model_bm_order_line
+msgid "Store Sale Order Line"
+msgstr "Товарний рядок чека продажу"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__price_subtotal
+msgid "Subtotal"
+msgstr "Сума рядка"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_form
+msgid "Target Financial Allocation"
+msgstr "Цільовий фінансовий розподіл"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_adjustment__card_id
+msgid "Target Loyalty Card"
+msgstr "Цільова картка лояльності"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__cashback_percent
+msgid "The additional percentage credited to the customer as cashback."
+msgstr "Додатковий відсоток від суми покупки, який нараховується клієнту у вигляді балів кешбеку."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__cash_paid
+msgid "The cash money received from the customer."
+msgstr "Сума паперових або електронних грошей, фактично отримана від покупця в касу."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__change_amount
+msgid ""
+"The change money to return to the customer if they paid more than the order "
+"cost."
+msgstr "Сума здачі, яку касир повинен повернути клієнту, якщо внесена сума перевищує вартість замовлення."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__available_cashback
+msgid "The current cashback points balance that this customer."
+msgstr "Поточний баланс накопичених балів кешбеку, який зараз є у цього клієнта."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__card_id
+msgid ""
+"The customer loyalty card used for this payment. Can be changed by the "
+"cashier."
+msgstr "Картка лояльності клієнта, використана для цього розрахунку. Може бути змінена касиром прямо у вікні оплати."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__credit_limit
+msgid "The maximum allowable debt threshold permitted for this specific card."
+msgstr "Максимально дозволений ліміт заборгованості (кредитний ліміт) для цієї конкретної картки."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_res_company__max_global_credit_limit
+msgid "The maximum credit limit that can be assigned to any loyalty card."
+msgstr "Глобальний максимальний ліміт кредитування, який дозволено встановлювати для будь-якої картки в системі додатка."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__remaining_debt
+msgid "The missing money amount that will be sent to the customer debt."
+msgstr "Сума грошей, якої не вистачає для повної оплати і яка буде перенесена на борг клієнта."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_order__amount_untaxed
+msgid "The raw sum of all order lines before applying any discounts."
+msgstr "Початкова сума всіх товарних рядків замовлення до застосування будь-яких знижок за карткою."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_res_partner__total_cashback_balance
+#: model:ir.model.fields,help:building_store.field_res_users__total_cashback_balance
+msgid ""
+"The single unified balance of accumulated marketing cashback available for "
+"redemption at checkouts."
+msgstr "Єдиний спільний баланс накопиченого маркетингового кешбеку клієнта, доступний для списання на касі додатка будівельного магазину."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__total_received
+msgid "The sum of cash money received plus the cashback points used."
+msgstr "Загальна сума отриманих коштів (внесена готівка плюс списані бали кешбеку клієнта)."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_payment_wizard__amount_to_pay
+msgid "The total money amount from the sales order that needs to be paid."
+msgstr "Підсумкова сума до сплати із замовлення покупця, яку касир повинен прийняти на касі."
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_debt_adjustment
+msgid ""
+"This utility is strictly reserved for managing master card opening balances "
+"and manual corrections."
+msgstr ""
+"Цей інструмент зарезервований виключно для внесення стартових залишків за картками клієнтів та проведення офіційних ручних коригувань."
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_list
+msgid "Total Adjusted Amount"
+msgstr "Загальна сума коригувань"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_res_partner__total_cashback_balance
+#: model:ir.model.fields,field_description:building_store.field_res_users__total_cashback_balance
+msgid "Total Cashback Balance"
+msgstr "Загальний баланс кешбеку"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_list
+msgid "Total Cumulative Turnover"
+msgstr "Загальний накопичений оборот покупок"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_list
+msgid "Total Given Discounts"
+msgstr "Загальна сума наданих знижок"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_list
+msgid "Total Gross Revenue"
+msgstr "Загальна валова виручка"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__total_received
+msgid "Total Money Received"
+msgstr "Загалом внесено коштів"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_ledger_list
+msgid "Total Movements Volume"
+msgstr "Загальний обсяг рухів заборгованості"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__amount_to_pay
+msgid "Total Order Amount"
+msgstr "Загальна сума замовлення"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_list
+msgid "Total Outstanding Debt"
+msgstr "Сумарний поточний борг"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__total_sales_volume
+msgid "Total Sales Volume"
+msgstr "Загальний оборот покупок"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "Total Turnover"
+msgstr "Загальний оборот"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_order_list
+msgid "Total Untaxed Volume"
+msgstr "Загальна сума без знижки"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__amount_total
+msgid "Total to Pay"
+msgstr "Разом до сплати"
+
+#. module: building_store
+#: model_terms:ir.actions.act_window,help:building_store.action_bm_loyalty_card
+msgid ""
+"Track customer lifecycle stages, monitor credit limits, and accept "
+"instantaneous debt repayments directly from this dashboard."
+msgstr ""
+"Відстежуйте етапи життєвого циклу клієнтів, контролюйте кредитні ліміти та "
+"приймайте миттєві погашення боргів безпосередньо з цієї панелі."
+
+#. module: building_store
+#: model:res.groups,name:building_store.group_building_store_trainee
+msgid "Trainee Cashier"
+msgstr "Касир-стажер"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_debt_adjustment_form
+msgid "Transaction Accounting Value"
+msgstr "Бухгалтерська оцінка транзакції"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__amount
+msgid "Transaction Amount"
+msgstr "Сума транзакції"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_debt_ledger__date
+msgid "Transaction Date"
+msgstr "Дата транзакції"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип виключної дії для запису."
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__name
+msgid "Unique alpha-numeric identifier or physical code of the loyalty card."
+msgstr "Унікальний буквено-цифровий ідентифікатор або фізичний код картки лояльності."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order_line__price_unit
+msgid "Unit Price"
+msgstr "Ціна за одиницю"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Сума до знижки"
+
+#. module: building_store
+#. odoo-python
+#: code:addons/building_store/models/debt_adjustment.py:0
+msgid ""
+"Validation Error! The adjustment amount value must be strictly greater than "
+"zero."
+msgstr ""
+"Помилка валідації! Сума коригування заборгованості за карткою повинна бути "
+"строго більшою за нуль."
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_loyalty_card__website_message_ids
+msgid "Website Messages"
+msgstr "Повідомлення з веб-сайту"
+
+#. module: building_store
+#: model:ir.model.fields,help:building_store.field_bm_loyalty_card__website_message_ids
+msgid "Website communication history"
+msgstr "Історія комунікації через веб-сайт"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_search
+msgid "Wiped Balance (Clean)"
+msgstr "Без заборгованості (Чистий баланс)"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "e.g., ART-000123"
+msgstr "напр., АРТ-000123"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_loyalty_card_form
+msgid "e.g., CARD-990123"
+msgstr "напр., CARD-990123"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.view_bm_product_form
+msgid "e.g., Cement M-500 / Plasterboard 2500x1200x12.5"
+msgstr "напр., Цемент М-500 / Гіпсокартон 2500х1200х12.5"
+
+#. module: building_store
+#: model_terms:ir.ui.view,arch_db:building_store.report_customer_financial_statement
+msgid "end"
+msgstr "кінець сторінки"
+
+#. module: building_store
+#: model:ir.model.constraint,message:building_store.constraint_bm_loyalty_card_unique_name
+msgid "The loyalty card number must be unique!"
+msgstr "Номер картки лояльності має бути унікальним!"
+
+#. module: building_store
+#: model:ir.model.constraint,message:building_store.constraint_bm_product_unique_sku
+msgid "The SKU/Article code must be absolutely unique across the inventory!"
+msgstr "Код SKU/Артикул має бути абсолютно унікальним для всього складу!"
+
+#. module: building_store
+#: model:ir.model.fields,field_description:building_store.field_bm_order__discount_amount
+#: model:ir.model.fields,field_description:building_store.field_bm_payment_wizard__discount_amount_wizard
+msgid "Discount Amount"
+msgstr "Сума знижки"

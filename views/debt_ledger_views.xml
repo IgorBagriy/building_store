@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_bm_debt_ledger_list" model="ir.ui.view">
+        <field name="name">bm.debt.ledger.list</field>
+        <field name="model">bm.debt.ledger</field>
+        <field name="arch" type="xml">
+            <list string="Debt Ledger Movements" create="false" edit="false" delete="false">
+                <field name="date"/>
+                <field name="partner_id"/>
+                <field name="card_id"/>
+                <field name="direction"/>
+                <field name="amount" sum="Total Movements Volume"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_bm_debt_ledger_pivot" model="ir.ui.view">
+        <field name="name">bm.debt.ledger.pivot</field>
+        <field name="model">bm.debt.ledger</field>
+        <field name="arch" type="xml">
+            <pivot string="Debt Sub-Ledger Analysis" sample="1">
+                <field name="partner_id" type="row"/>
+                <field name="card_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_bm_debt_ledger" model="ir.actions.act_window">
+        <field name="name">Debt Ledger Analytics</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.debt.ledger</field>
+        <field name="view_mode">pivot,list</field>
+        <field name="view_id" ref="view_bm_debt_ledger_pivot"/>
+    </record>
+
+</odoo>

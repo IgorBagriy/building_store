@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_customer_financial_statement" model="ir.actions.report">
+        <field name="name">Customer Loyalty Program</field>
+        <field name="model">res.partner</field>
+        <field name="report_name">building_store.report_customer_financial_statement</field>
+        <field name="report_file">building_store.report_customer_financial_statement</field>
+        <field name="report_type">qweb-html</field>
+        <field name="print_report_name">'Customer_Report_%s' % (object.name)</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

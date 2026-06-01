@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_bm_loyalty_card_list" model="ir.ui.view">
+        <field name="name">bm.loyalty.card.list</field>
+        <field name="model">bm.loyalty.card</field>
+        <field name="arch" type="xml">
+            <list string="Master Loyalty Cards" decoration-danger="current_debt &gt; 0" decoration-muted="state == 'blocked'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="issue_date"/>
+                <field name="discount_percent"/>
+                <field name="cashback_percent"/>
+                <field name="credit_limit"/>
+                <field name="current_debt" sum="Total Outstanding Debt"/>
+                <field name="total_sales_volume" sum="Total Cumulative Turnover"/>
+                <field name="state" widget="badge" decoration-info="state == 'new'" decoration-success="state == 'active'" decoration-danger="state == 'blocked'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_bm_loyalty_card_form" model="ir.ui.view">
+        <field name="name">bm.loyalty.card.form</field>
+        <field name="model">bm.loyalty.card</field>
+        <field name="arch" type="xml">
+            <form string="Master Loyalty Card">
+                <header>
+                    <button name="%(building_store.action_bm_debt_adjustment_cash_desk)d"
+                            string="Process Repayment"
+                            type="action"
+                            class="btn-primary"
+                            invisible="current_debt == 0"
+                            context="{'default_card_id': id, 'default_partner_id': partner_id, 'default_amount': current_debt}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,active,blocked"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Card Number / Code"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., CARD-990123" readonly="state == 'blocked'"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Contractor Personal Profile Link">
+                            <field name="partner_id" options="{'no_create': True}" readonly="state == 'blocked'"/>
+                            <field name="issue_date" readonly="1"/>
+                        </group>
+                        <group string="Credit Risk Boundary Controls">
+                            <field name="credit_limit" readonly="state == 'blocked'"/>
+                        </group>
+                    </group>
+                    <group string="Loyalty Program Incentive Percentages">
+                        <group>
+                            <field name="discount_percent" readonly="state == 'blocked'"/>
+                        </group>
+                        <group>
+                            <field name="cashback_percent" readonly="state == 'blocked'"/>
+                        </group>
+                    </group>
+                    <group string="Real-Time Financial Balances (Sub-Ledger)">
+                        <group>
+                            <field name="current_debt" class="text-danger fw-bold"/>
+                        </group>
+                        <group>
+                            <field name="total_sales_volume" class="text-primary fw-bold"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bm_loyalty_card_kanban" model="ir.ui.view">
+        <field name="name">bm.loyalty.card.kanban</field>
+        <field name="model">bm.loyalty.card</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" records_draggable="true" quick_create="false">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="current_debt"/>
+                <field name="total_sales_volume"/>
+                <field name="discount_percent"/>
+                <field name="cashback_percent"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="card" class="flex-column p-3 gap-2">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <div class="fw-bold text-dark fs-5">
+                                    <field name="name"/>
+                                </div>
+                                <div class="text-primary fw-semibold mt-1">
+                                    <field name="partner_id"/>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_avatar ms-2">
+                                <img t-attf-src="/web/image/res.partner/#{record.partner_id.raw_value}/avatar_128"
+                                     t-att-alt="record.partner_id.value"
+                                     class="rounded-circle"
+                                     style="width: 36px; height: 36px; object-fit: cover;"/>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 text-muted small my-1">
+                            <div class="d-flex align-items-center gap-1" title="Discount Percent">
+                                <i class="fa fa-tags text-warning small"/>
+                                <span>Disc: </span>
+                                <span class="fw-bold text-dark"><field name="discount_percent"/>%</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-1" title="Cashback Percent">
+                                <i class="fa fa-money text-success small"/>
+                                <span>Cash: </span>
+                                <span class="fw-bold text-dark"><field name="cashback_percent"/>%</span>
+                            </div>
+                        </div>
+                        <div class="row g-0 mt-2 border-top pt-2 text-muted small">
+                            <div class="col-6">
+                                <span>Turnover: </span>
+                                <span class="text-info fw-bold"><t t-esc="record.total_sales_volume.value"/></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span>Debt: </span>
+                                <span t-attf-class="fw-bold #{record.current_debt.raw_value &gt; 0 ? 'text-danger' : 'text-muted'}">
+                                    <t t-esc="record.current_debt.value"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end mt-2" t-if="record.current_debt.raw_value &gt; 0">
+                            <button name="%(building_store.action_bm_debt_adjustment_cash_desk)d"
+                                    type="action"
+                                    class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
+                                    title="Quick Repayment"
+                                    context="{'default_card_id': id, 'default_partner_id': partner_id, 'default_amount': current_debt}">
+                                <i class="fa fa-credit-card"/>
+                                <span>Repay</span>
+                            </button>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_bm_loyalty_card_search" model="ir.ui.view">
+        <field name="name">bm.loyalty.card.search</field>
+        <field name="model">bm.loyalty.card</field>
+        <field name="arch" type="xml">
+            <search string="Search Loyalty Cards">
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('partner_id', 'ilike', self)]" string="Card or Customer"/>
+                <separator/>
+                <filter string="Active Outstanding Debt" name="has_debt" domain="[('current_debt', '>', 0)]"/>
+                <filter string="Wiped Balance (Clean)" name="no_debt" domain="[('current_debt', '=', 0)]"/>
+                <searchpanel>
+                    <field name="partner_id" icon="fa-users" string="Customers Filter" select="multi"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_bm_loyalty_card" model="ir.actions.act_window">
+        <field name="name">Customer Loyalty Cards</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.loyalty.card</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="view_id" ref="view_bm_loyalty_card_kanban"/>
+        <field name="search_view_id" ref="view_bm_loyalty_card_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register your first customer loyalty card!
+            </p>
+            <p>
+                Track customer lifecycle stages, monitor credit limits, and accept instantaneous debt repayments directly from this dashboard.
+            </p>
+        </field>
+    </record>
+
+</odoo>

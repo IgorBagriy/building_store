@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_building_store_root"
+              name="Building Store"
+              web_icon="building_store,static/description/icon.png"
+              groups="group_building_store_trainee"/>
+
+    <menuitem id="menu_building_store_operations"
+              name="Operations &amp; Checkout"
+              parent="menu_building_store_root"
+              sequence="10"/>
+
+    <menuitem id="menu_building_store_customers"
+              name="Customers &amp; Cards"
+              parent="menu_building_store_root"
+              sequence="20"/>
+
+    <menuitem id="menu_building_store_products"
+              name="Products Inventory"
+              parent="menu_building_store_root"
+              sequence="30"/>
+
+    <menuitem id="menu_building_store_configuration"
+              name="Configuration"
+              parent="menu_building_store_root"
+              sequence="100"
+              groups="group_building_store_admin"/>
+
+    <menuitem id="menu_building_store_finance"
+              name="Financial Audit"
+              parent="menu_building_store_root"
+              sequence="40"
+              groups="group_building_store_admin"/>
+
+    <menuitem id="menu_action_store_order"
+              name="Sales Orders"
+              parent="menu_building_store_operations"
+              action="action_bm_order"
+              sequence="10"/>
+
+    <menuitem id="menu_action_res_partner_building"
+              name="Customers (Partners)"
+              parent="menu_building_store_customers"
+              action="base.action_partner_form"
+              sequence="5"/>
+
+    <menuitem id="menu_action_loyalty_card"
+              name="Customer Loyalty Cards"
+              parent="menu_building_store_customers"
+              action="action_bm_loyalty_card"
+              sequence="10"/>
+
+    <menuitem id="menu_action_store_product"
+              name="Store Products"
+              parent="menu_building_store_products"
+              action="action_bm_product"
+              sequence="10"/>
+
+    <menuitem id="menu_action_debt_adjustment"
+              name="Manual Debt Adjustments"
+              parent="menu_building_store_finance"
+              action="action_bm_debt_adjustment"
+              sequence="10"/>
+
+    <menuitem id="menu_action_debt_ledger"
+              name="Debt Balance Ledger"
+              parent="menu_building_store_finance"
+              action="action_bm_debt_ledger"
+              sequence="20"/>
+
+    <menuitem id="menu_action_res_company_building"
+              name="Companies"
+              parent="menu_building_store_configuration"
+              action="base.action_res_company_form"
+              sequence="10"/>
+
+</odoo>

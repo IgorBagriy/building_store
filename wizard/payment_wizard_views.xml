@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_bm_payment_wizard_form" model="ir.ui.view">
+        <field name="name">bm.payment.wizard.form</field>
+        <field name="model">bm.payment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cash Desk Checkout Integration Engine">
+                <sheet>
+                    <group>
+                        <group string="Invoice Context Source">
+                            <field name="order_id"/>
+                            <field name="partner_id" options="{'no_open': True}"/>
+                            <field name="card_id" options="{'no_create': True, 'no_open': True}" domain="[('partner_id', '=', partner_id)]"/>
+                        </group>
+                        <group string="Financial Accounting Inbound Core">
+                            <field name="amount_to_pay" class="text-primary font-weight-bold"/>
+                            <field name="discount_amount_wizard" class="text-warning font-weight-bold" invisible="discount_amount_wizard == 0"/>
+                            <field name="available_cashback" class="text-success font-weight-bold"/>
+                        </group>
+                    </group>
+                    <group string="Cash Desk Payments Registry">
+                        <group>
+                            <field name="cash_paid" class="font-weight-bold"/>
+                            <field name="cashback_paid" class="font-weight-bold"/>
+                        </group>
+                        <group>
+                            <field name="total_received"/>
+                            <field name="change_amount" class="text-success font-weight-bold" invisible="change_amount == 0"/>
+                        </group>
+                    </group>
+                    <group string="Credit Control and Risk Capital Limits"
+                           groups="building_store.group_building_store_user"
+                           invisible="remaining_debt == 0">
+                        <group>
+                            <field name="remaining_debt" class="text-danger font-weight-bold"/>
+                        </group>
+                        <group>
+                            <field name="allow_debt" class="oe_inline"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <footer>
+                    <button name="action_process_sale" string="Process Sale" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bm_payment_wizard" model="ir.actions.act_window">
+        <field name="name">Cash Desk checkout Payment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.payment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 1. CORE PERSISTENCE LAYER: RES.PARTNER (CUSTOMERS INTEGRATION) -->
+    <record id="demo_customer_petrenko" model="res.partner">
+        <field name="name">Oleksandr Petrenko</field>
+        <field name="phone">+380501112233</field>
+        <field name="email">petrenko.build@email.com</field>
+        <field name="total_cashback_balance">150.00</field>
+    </record>
+
+    <record id="demo_customer_ivanenko" model="res.partner">
+        <field name="name">Dmytro Ivanenko</field>
+        <field name="phone">+380674445566</field>
+        <field name="email">ivanenko.pro@email.com</field>
+        <field name="total_cashback_balance">0.00</field>
+    </record>
+
+    <record id="demo_customer_kovalenko" model="res.partner">
+        <field name="name">Sergiy Kovalenko</field>
+        <field name="phone">+380937778899</field>
+        <field name="email">kovalenko.bricks@email.com</field>
+        <field name="total_cashback_balance">450.50</field>
+    </record>
+
+    <record id="demo_customer_sydorenko" model="res.partner">
+        <field name="name">Vasyl Sydorenko</field>
+        <field name="phone">+380445551122</field>
+        <field name="email">sydorenko.concrete@email.com</field>
+        <field name="total_cashback_balance">0.00</field>
+    </record>
+
+    <record id="demo_customer_moroz" model="res.partner">
+        <field name="name">Andriy Moroz</field>
+        <field name="phone">+380631234567</field>
+        <field name="email">moroz.roof@email.com</field>
+        <field name="total_cashback_balance">0.00</field>
+    </record>
+
+    <!-- 2. CORE PERSISTENCE LAYER: BM.PRODUCT (STORE PRODUCT CATALOGUE) -->
+    <record id="demo_product_cement" model="bm.product">
+        <field name="name">Cement Bag M-500 Premium 25kg</field>
+        <field name="sku">SKU-CEM-001</field>
+        <field name="list_price">160.00</field>
+    </record>
+
+    <record id="demo_product_plaster" model="bm.product">
+        <field name="name">Knauf Gypsum Plasterboard 2500x1200x12.5mm</field>
+        <field name="sku">SKU-KNF-042</field>
+        <field name="list_price">320.00</field>
+    </record>
+
+    <record id="demo_product_roofing" model="bm.product">
+        <field name="name">Galvanized Corrugated Roofing Sheet 2m</field>
+        <field name="sku">SKU-ROOF-889</field>
+        <field name="list_price">480.00</field>
+    </record>
+
+    <!-- 3. CORE PERSISTENCE LAYER: BM.LOYALTY.CARD (LIFECYCLE CONTROL) -->
+    <record id="demo_card_petrenko" model="bm.loyalty.card">
+        <field name="name">CARD-PET-101</field>
+        <field name="partner_id" ref="demo_customer_petrenko"/>
+        <field name="discount_percent">5.00</field>
+        <field name="cashback_percent">3.00</field>
+        <field name="credit_limit">10000.00</field>
+        <field name="state">active</field>
+    </record>
+
+    <record id="demo_card_ivanenko" model="bm.loyalty.card">
+        <field name="name">CARD-IVA-202</field>
+        <field name="partner_id" ref="demo_customer_ivanenko"/>
+        <field name="discount_percent">7.50</field>
+        <field name="cashback_percent">4.00</field>
+        <field name="credit_limit">25000.00</field>
+        <field name="state">active</field>
+    </record>
+
+    <record id="demo_card_kovalenko" model="bm.loyalty.card">
+        <field name="name">CARD-KOV-303</field>
+        <field name="partner_id" ref="demo_customer_kovalenko"/>
+        <field name="discount_percent">10.00</field>
+        <field name="cashback_percent">5.00</field>
+        <field name="credit_limit">40000.00</field>
+        <field name="state">active</field>
+    </record>
+
+    <record id="demo_card_sydorenko" model="bm.loyalty.card">
+        <field name="name">CARD-SYD-404</field>
+        <field name="partner_id" ref="demo_customer_sydorenko"/>
+        <field name="discount_percent">0.00</field>
+        <field name="cashback_percent">0.00</field>
+        <field name="credit_limit">0.00</field>
+        <field name="state">blocked</field>
+    </record>
+
+    <record id="demo_card_moroz" model="bm.loyalty.card">
+        <field name="name">CARD-MOR-505</field>
+        <field name="partner_id" ref="demo_customer_moroz"/>
+        <field name="discount_percent">0.00</field>
+        <field name="cashback_percent">0.00</field>
+        <field name="credit_limit">0.00</field>
+        <field name="state">new</field>
+    </record>
+
+    <!-- 4. CORE OPERATIONAL LAYER: BM.ORDER JOURNAL DOCUMENTS -->
+    <record id="demo_order_done_1" model="bm.order">
+        <field name="name">BS-2026-0001</field>
+        <field name="partner_id" ref="demo_customer_petrenko"/>
+        <field name="card_id" ref="demo_card_petrenko"/>
+        <field name="state">done</field>
+    </record>
+
+    <record id="demo_order_done_2" model="bm.order">
+        <field name="name">BS-2026-0002</field>
+        <field name="partner_id" ref="demo_customer_ivanenko"/>
+        <field name="card_id" ref="demo_card_ivanenko"/>
+        <field name="state">done</field>
+    </record>
+
+    <record id="demo_order_done_3" model="bm.order">
+        <field name="name">BS-2026-0003</field>
+        <field name="partner_id" ref="demo_customer_kovalenko"/>
+        <field name="card_id" ref="demo_card_kovalenko"/>
+        <field name="state">done</field>
+    </record>
+
+    <record id="demo_order_draft_4" model="bm.order">
+        <field name="name">BS-2026-0004</field>
+        <field name="partner_id" ref="demo_customer_petrenko"/>
+        <field name="card_id" ref="demo_card_petrenko"/>
+        <field name="state">draft</field>
+    </record>
+
+    <record id="demo_order_draft_5" model="bm.order">
+        <field name="name">BS-2026-0005</field>
+        <field name="partner_id" ref="demo_customer_ivanenko"/>
+        <field name="card_id" ref="demo_card_ivanenko"/>
+        <field name="state">draft</field>
+    </record>
+
+    <record id="demo_order_done_6" model="bm.order">
+        <field name="name">BS-2026-0006</field>
+        <field name="partner_id" ref="demo_customer_sydorenko"/>
+        <field name="card_id" ref="demo_card_sydorenko"/>
+        <field name="state">done</field>
+    </record>
+
+    <!-- 5. TABULAR SECTIONS LAYER: BM.ORDER.LINE (SPECIFICATION LINES) -->
+    <record id="demo_line_order1_cement" model="bm.order.line">
+        <field name="order_id" ref="demo_order_done_1"/>
+        <field name="product_id" ref="demo_product_cement"/>
+        <field name="product_uom_qty">10.0</field>
+        <field name="price_unit">160.00</field>
+    </record>
+
+    <record id="demo_line_order2_plaster" model="bm.order.line">
+        <field name="order_id" ref="demo_order_done_2"/>
+        <field name="product_id" ref="demo_product_plaster"/>
+        <field name="product_uom_qty">25.0</field>
+        <field name="price_unit">320.00</field>
+    </record>
+
+    <record id="demo_line_order3_roofing" model="bm.order.line">
+        <field name="order_id" ref="demo_order_done_3"/>
+        <field name="product_id" ref="demo_product_roofing"/>
+        <field name="product_uom_qty">5.0</field>
+        <field name="price_unit">480.00</field>
+    </record>
+
+    <record id="demo_line_order4_cement" model="bm.order.line">
+        <field name="order_id" ref="demo_order_draft_4"/>
+        <field name="product_id" ref="demo_product_cement"/>
+        <field name="product_uom_qty">2.0</field>
+        <field name="price_unit">160.00</field>
+    </record>
+
+    <record id="demo_line_order5_roofing" model="bm.order.line">
+        <field name="order_id" ref="demo_order_draft_5"/>
+        <field name="product_id" ref="demo_product_roofing"/>
+        <field name="product_uom_qty">15.0</field>
+        <field name="price_unit">480.00</field>
+    </record>
+
+    <record id="demo_line_order6_plaster" model="bm.order.line">
+        <field name="order_id" ref="demo_order_done_6"/>
+        <field name="product_id" ref="demo_product_plaster"/>
+        <field name="product_uom_qty">50.0</field>
+        <field name="price_unit">320.00</field>
+    </record>
+
+    <!-- 6. SUB-LEDGER TRANSACTION FINANCIAL ENGINE (DEBT BALANCES REGISTER) -->
+    <record id="demo_ledger_movement_1" model="bm.debt.ledger">
+        <field name="partner_id" ref="demo_customer_petrenko"/>
+        <field name="card_id" ref="demo_card_petrenko"/>
+        <field name="amount">3500.00</field>
+        <field name="direction">increase</field>
+        <field name="res_model">bm.order</field>
+        <field name="res_id" eval="ref('demo_order_done_1')"/>
+    </record>
+
+    <record id="demo_ledger_movement_2" model="bm.debt.ledger">
+        <field name="partner_id" ref="demo_customer_ivanenko"/>
+        <field name="card_id" ref="demo_card_ivanenko"/>
+        <field name="amount">12000.00</field>
+        <field name="direction">increase</field>
+        <field name="res_model">bm.order</field>
+        <field name="res_id" eval="ref('demo_order_done_2')"/>
+    </record>
+
+    <record id="demo_ledger_movement_3" model="bm.debt.ledger">
+        <field name="partner_id" ref="demo_customer_kovalenko"/>
+        <field name="card_id" ref="demo_card_kovalenko"/>
+        <field name="amount">2500.00</field>
+        <field name="direction">increase</field>
+        <field name="res_model">bm.order</field>
+        <field name="res_id" eval="ref('demo_order_done_3')"/>
+    </record>
+
+    <!-- 7. AUDIT WORKFLOW: BM.DEBT.ADJUSTMENT (BALANCES CORRECTIONS) -->
+    <record id="demo_adjustment_record_1" model="bm.debt.adjustment">
+        <field name="name">ADJ-2026-0001</field>
+        <field name="card_id" ref="demo_card_petrenko"/>
+        <field name="partner_id" ref="demo_customer_petrenko"/>
+        <field name="amount">3500.00</field>
+        <field name="type">increase</field>
+    </record>
+
+    <record id="demo_adjustment_record_2" model="bm.debt.adjustment">
+        <field name="name">ADJ-2026-0002</field>
+        <field name="card_id" ref="demo_card_ivanenko"/>
+        <field name="partner_id" ref="demo_customer_ivanenko"/>
+        <field name="amount">12000.00</field>
+        <field name="type">increase</field>
+    </record>
+
+    <record id="demo_adjustment_record_3" model="bm.debt.adjustment">
+        <field name="name">ADJ-2026-0003</field>
+        <field name="card_id" ref="demo_card_kovalenko"/>
+        <field name="partner_id" ref="demo_customer_kovalenko"/>
+        <field name="amount">1500.00</field>
+        <field name="type">decrease</field>
+    </record>
+
+     <function model="bm.loyalty.card" name="_compute_card_state">
+        <value eval="[ref('demo_card_petrenko'), ref('demo_card_ivanenko'), ref('demo_card_kovalenko'), ref('demo_card_sydorenko'), ref('demo_card_moroz')]"/>
+    </function>
+
+</odoo>

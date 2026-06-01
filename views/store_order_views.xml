@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="seq_bm_order" model="ir.sequence">
+        <field name="name">Order Sequence</field>
+        <field name="code">bm.order.seq</field>
+        <field name="prefix">BS-2026-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="view_bm_order_list" model="ir.ui.view">
+        <field name="name">bm.order.list</field>
+        <field name="model">bm.order</field>
+        <field name="arch" type="xml">
+            <list string="Sales Orders" decoration-info="state == 'draft'" decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="card_id"/>
+                <field name="user_id" widget="many2one_avatar_user"/>
+                <field name="amount_untaxed" sum="Total Untaxed Volume"/>
+                <field name="discount_amount" sum="Total Given Discounts"/>
+                <field name="amount_total" sum="Total Gross Revenue"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_bm_order_form" model="ir.ui.view">
+        <field name="name">bm.order.form</field>
+        <field name="model">bm.order</field>
+        <field name="arch" type="xml">
+            <form string="Sales Order">
+                <header>
+                    <button name="%(building_store.action_bm_payment_wizard)d"
+                            string="Process Payment"
+                            type="action"
+                            class="btn-primary"
+                            invisible="state != 'draft'"
+                            context="{'default_order_id': id}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Customer Contractor Profile">
+                            <field name="partner_id" options="{'no_create': True, 'no_open': True}" readonly="state == 'done'"/>
+                            <field name="card_id"
+                                   options="{'no_create': True, 'no_open': True}"
+                                   domain="[('state', '!=', 'blocked'), ('partner_id', '=', partner_id)]"
+                                   readonly="state == 'done'"/>
+                        </group>
+                        <group string="Operational Session Meta">
+                            <field name="date_order" readonly="1"/>
+                            <field name="user_id" options="{'no_open': True}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Purchased Products List" name="order_lines_page">
+                            <field name="order_line_ids" readonly="state == 'done'">
+                                <list string="Order Lines" editable="bottom">
+                                    <field name="product_id" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal"/>
+                                    <control>
+                                        <create string="Add a product line" title="Add a product line"/>
+                                    </control>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" name="order_total_summaries">
+                                <field name="amount_untaxed"/>
+                                <field name="discount_percent" class="oe_inline"/>
+                                <field name="discount_amount" widget="monetary"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total"/>
+                                </div>
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary"/>
+                            </group>
+                            <div class="clearfix"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bm_order_calendar" model="ir.ui.view">
+        <field name="name">bm.order.calendar</field>
+        <field name="model">bm.order</field>
+        <field name="arch" type="xml">
+            <calendar string="Sales Orders Log"
+                      date_start="date_order"
+                      color="user_id"
+                      mode="month"
+                      quick_create="false">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="amount_total" widget="monetary"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_bm_order_pivot" model="ir.ui.view">
+        <field name="name">bm.order.pivot</field>
+        <field name="model">bm.order</field>
+        <field name="arch" type="xml">
+            <pivot string="Sales Optimization Analytics" sample="1">
+                <field name="partner_id" type="row"/>
+                <field name="user_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="amount_total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_bm_order" model="ir.actions.act_window">
+        <field name="name">Sales Orders Journal</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.order</field>
+        <field name="view_mode">list,calendar,pivot,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first construction sales check!
+            </p>
+            <p>
+                Add store products, link loyalty card to fetch discounts, and process rapid cash desk payments.
+            </p>
+        </field>
+    </record>
+
+</odoo>

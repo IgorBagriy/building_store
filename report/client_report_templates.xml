@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_customer_financial_statement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" t-attf-style="page-break-after: always; font-family: 'Helvetica', 'Arial', sans-serif; color: #333333; padding: 20px;">
+
+                    <div class="row border-bottom border-2 pb-3 mb-4">
+                        <div class="col-6">
+                            <h2 class="text-primary font-weight-bold" style="margin: 0;">BUILDING STORE</h2>
+                            <small class="text-muted">Materials Retail Network</small>
+                        </div>
+                        <div class="col-6 text-end">
+                            <h4 style="margin: 0; color: #555555;">Customer Loyalty Program</h4>
+                            <small class="text-muted">Generated Date: <t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/></small>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light mb-4 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h3 class="font-weight-bold text-dark mb-2"><t t-esc="doc.name"/></h3>
+                                    <p class="mb-1"><strong>Phone: </strong><t t-esc="doc.phone or 'N/A'"/></p>
+                                    <p class="mb-0"><strong>Email: </strong><t t-esc="doc.email or 'N/A'"/></p>
+                                </div>
+                                <div class="col-5 text-end d-flex flex-column justify-content-center border-start border-2 ps-4">
+                                    <span class="text-muted small text-uppercase font-weight-bold">Unified Cashback Balance</span>
+                                    <h1 class="text-success font-weight-bold style" style="margin: 0; font-size: 2.5rem;">
+                                        <t t-esc="doc.total_cashback_balance" t-options="{'widget': 'float', 'precision': 2}"/>
+                                        <small class="fs-6 text-muted"> points</small>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   <h5 class="text-secondary font-weight-bold mb-3">Registered Loyalty Cards &amp; Sub-Ledger Accounts</h5>
+                    <table class="table table-hover table-striped border shadow-sm align-middle" style="background-color: #ffffff;">
+                        <thead class="table-dark text-uppercase small">
+                            <tr>
+                                <th class="p-3">Card Number</th>
+                                <th class="p-3">Issued Date</th>
+                                <th class="p-3 text-center">Disc (%)</th>
+                                <th class="p-3 text-center">Cash (%)</th>
+                                <th class="p-3 text-center">Status</th>
+                                <th class="p-3 text-end">Total Turnover</th>
+                                <th class="p-3 text-end">Outstanding Debt</th>
+                            </tr>
+                        </thead>
+                        <tbody class="small">
+                            <t t-foreach="doc.loyalty_card_ids" t-as="card">
+                                <tr>
+                                    <td class="p-3 font-weight-bold text-slate-800"><t t-esc="card.name"/></td>
+                                    <td class="p-3 text-muted"><t t-esc="card.issue_date"/></td>
+                                    <td class="p-3 text-center"><t t-esc="card.discount_percent"/>%</td>
+                                    <td class="p-3 text-center"><t t-esc="card.cashback_percent"/>%</td>
+                                    <td class="p-3 text-center">
+                                        <span t-attf-class="badge rounded-pill #{'bg-success' if card.state == 'active' else ('bg-secondary' if card.state == 'new' else 'bg-danger')}">
+                                            <t t-esc="card.state"/>
+                                        </span>
+                                    </td>
+                                    <td class="p-3 text-end text-info font-weight-bold">
+                                        <t t-esc="card.total_sales_volume" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                    </td>
+                                    <td t-attf-class="p-3 text-end fw-bold #{'text-danger table-danger' if card.current_debt &gt; 0 else 'text-muted'}">
+                                        <t t-esc="card.current_debt" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="not doc.loyalty_card_ids">
+                                <tr>
+                                    <td colspan="7" class="p-4 text-center text-muted italic">
+                                        No active or registered loyalty cards found.
+                                    </td>
+                                end </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <div class="row mt-5 pt-4 border-top border-1 text-muted small">
+                        <div class="col-6">
+                            <span>Authorized Signature: _______________________</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span>Building Store Automated Audit Accounting Document</span>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

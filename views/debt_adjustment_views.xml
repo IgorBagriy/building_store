@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="seq_bm_debt_adjustment" model="ir.sequence">
+        <field name="name">Debt Adjustment Sequence</field>
+        <field name="code">bm.debt.adjustment.seq</field>
+        <field name="prefix">BS-2026-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="view_bm_debt_adjustment_list" model="ir.ui.view">
+        <field name="name">bm.debt.adjustment.list</field>
+        <field name="model">bm.debt.adjustment</field>
+        <field name="arch" type="xml">
+            <list string="Debt Adjustments">
+                <field name="name"/>
+                <field name="adjustment_date"/>
+                <field name="card_id"/>
+                <field name="partner_id"/>
+                <field name="type"/>
+                <field name="amount" sum="Total Adjusted Amount"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_bm_debt_adjustment_form" model="ir.ui.view">
+        <field name="name">bm.debt.adjustment.form</field>
+        <field name="model">bm.debt.adjustment</field>
+        <field name="arch" type="xml">
+            <form string="Debt Adjustment">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Audit Parameters">
+                            <field name="adjustment_date"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group string="Target Financial Allocation">
+                            <field name="partner_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="card_id"
+                                   options="{'no_create': True, 'no_open': True}"
+                                   domain="[('partner_id', '=', partner_id)]"/>
+                        </group>
+                    </group>
+                    <group string="Transaction Accounting Value">
+                        <group>
+                            <field name="type" widget="radio" options="{'horizontal': true}"/>
+                            <field name="amount" class="font-weight-bold"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bm_debt_adjustment" model="ir.actions.act_window">
+        <field name="name">Debt Adjustments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.debt.adjustment</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a manual debt adjustment audit record!
+            </p>
+            <p>
+                This utility is strictly reserved for managing master card opening balances and manual corrections.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_bm_debt_adjustment_cash_desk" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bm.debt.adjustment</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_bm_debt_adjustment_form"/>
+        <field name="target">new</field>
+        <field name="context">{
+             'default_type': 'decrease'
+        }</field>
+    </record>
+
+</odoo>
