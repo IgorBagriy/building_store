@@ -6,7 +6,7 @@
         <record id="rule_bm_order_cashier_today" model="ir.rule">
             <field name="name">Cashier: View Today Sales Orders Only</field>
             <field name="model_id" ref="model_bm_order"/>
-            <field name="domain_force">[('date_order', '&gt;=', user.company_id.write_date.strftime('%Y-%m-%d 00:00:00'))]</field>
+            <field name="domain_force">[('date_order', '&gt;=', user.create_date.now().strftime('%Y-%m-%d 00:00:00'))]</field>
             <field name="groups" eval="[(4, ref('building_store.group_building_store_user'))]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
