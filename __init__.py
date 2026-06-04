@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Building Store Management Module.
 Core initialization package for models and transactional wizards.

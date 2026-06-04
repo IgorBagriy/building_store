@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     "name": "Building Store Management",
     "version": "19.0.1.0.0",

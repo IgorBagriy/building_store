@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import api, models, fields, _
 from odoo.exceptions import ValidationError
 
@@ -98,6 +97,33 @@ class BmDebtAdjustment(models.Model):
             elif record.type == "increase" and not record.amount:
                 record.amount = 0.0
 
+    @api.constrains("amount", "type", "card_id")
+    def _check_adjustment_financial_constraints(self):
+        """
+        Validates debt adjustment business constraints upon creation and modification.
+        """
+        for record in self:
+            # Check baseline range constraint
+            if record.amount <= 0.0:
+                raise ValidationError(
+                    _(
+                        "Validation Error! The adjustment amount value must be strictly greater than zero."
+                    )
+                )
+
+            # Check capital overflow constraint for repayments
+            if record.type == "decrease" and record.card_id:
+                # We fetch outstanding sub-ledger debt balance explicitly
+                current_card_debt = record.card_id.current_debt
+                if record.amount > current_card_debt:
+                    raise ValidationError(
+                        _(
+                            "Financial Violation! The repayment amount (%s) cannot exceed "
+                            "the actual outstanding debt balance on this card (%s)."
+                        )
+                        % (record.amount, current_card_debt)
+                    )
+
     def unlink(self):
         """
         Cascade cleans associated transaction sub-ledger lines before dropping the document.
@@ -105,11 +131,11 @@ class BmDebtAdjustment(models.Model):
         if self.env.context.get("install_mode") or self.env.context.get(
             "module_uninstall"
         ):
-            return super(BmDebtAdjustment, self).unlink()
+            return super().unlink()
 
         # Call centralized ledger clean service to maintain structural data consistency
         self.env["bm.debt.ledger"]._clean_document_movements(self._name, self.ids)
-        return super(BmDebtAdjustment, self).unlink()
+        return super().unlink()
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -124,30 +150,12 @@ class BmDebtAdjustment(models.Model):
                     or "/"
                 )
 
-        records = super(BmDebtAdjustment, self).create(vals_list)
+        records = super().create(vals_list)
 
         ledger_vals_list = []
         cards_to_recompute = self.env["bm.loyalty.card"]
 
         for record in records:
-            if record.amount <= 0.0:
-                raise ValidationError(
-                    _(
-                        "Validation Error! The adjustment amount value must be strictly greater than zero."
-                    )
-                )
-
-            if record.type == "decrease":
-                current_card_debt = record.card_id.current_debt
-                if record.amount > current_card_debt:
-                    raise ValidationError(
-                        _(
-                            "Financial Violation! The repayment amount (%s) cannot exceed "
-                            "the actual outstanding debt balance on this card (%s)."
-                        )
-                        % (record.amount, current_card_debt)
-                    )
-
             ledger_vals_list.append(
                 {
                     "partner_id": record.partner_id.id,

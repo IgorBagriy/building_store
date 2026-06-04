@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import api, models, fields
 
 
@@ -126,7 +125,7 @@ class BmOrder(models.Model):
 
     def unlink(self):
         self.env["bm.debt.ledger"]._clean_document_movements(self._name, self.ids)
-        return super(BmOrder, self).unlink()
+        return super().unlink()
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -138,4 +137,4 @@ class BmOrder(models.Model):
                 vals["name"] = (
                     self.env["ir.sequence"].next_by_code("bm.order.seq") or "/"
                 )
-        return super(BmOrder, self).create(vals_list)
+        return super().create(vals_list)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import api, models, fields
 
 
@@ -71,7 +70,7 @@ class BmDebtLedger(models.Model):
         Universal trigger: recalculates card debt when movement is removed.
         """
         cards = self.mapped("card_id")
-        res = super(BmDebtLedger, self).unlink()
+        res = super().unlink()
         if cards:
             # Forcibly update the balance in the database
             cards._compute_current_debt()

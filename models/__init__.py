@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Initialize core Python models for data persistence layer.
 """

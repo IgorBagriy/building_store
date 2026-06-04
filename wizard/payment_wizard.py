@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import api, models, fields, _
 from odoo.exceptions import ValidationError
 
@@ -99,7 +98,7 @@ class BmPaymentWizard(models.TransientModel):
         """
         Pre-populates order and card contexts directly from active execution stream.
         """
-        res = super(BmPaymentWizard, self).default_get(fields_list)
+        res = super().default_get(fields_list)
         active_id = self.env.context.get("active_id")
         if self.env.context.get("active_model") == "bm.order" and active_id:
             order = self.env["bm.order"].browse(active_id)
@@ -160,26 +159,12 @@ class BmPaymentWizard(models.TransientModel):
                 wizard.change_amount = 0.0
                 wizard.remaining_debt = wizard.amount_to_pay - received
 
-    @api.onchange("card_id")
-    def _onchange_card_id(self):
-        """
-        Two-way context sync event trigger: writes card selection back into the parent document
-        and recalculates parent financial matrices before compiling cash desk totals.
-        """
-        if self.card_id and self.order_id:
-            self.order_id.write({"card_id": self.card_id.id})
-            self.order_id._compute_order_totals()
-
     def action_process_sale(self):
         """
         Processes payment logic, alters single customer cashback balances,
         validates credit limitations, posts sub-ledger entries and closes workflow.
         """
         self.ensure_one()
-
-        if self.card_id != self.order_id.card_id:
-            self.order_id.write({"card_id": self.card_id.id if self.card_id else False})
-            self.order_id._compute_order_totals()
 
         if self.cashback_paid > self.available_cashback:
             raise ValidationError(
@@ -238,10 +223,10 @@ class BmPaymentWizard(models.TransientModel):
                 }
             )
 
-        self.card_id._compute_current_debt()
-
-        self.order_id.write({"state": "done"})
-        self.card_id._compute_sales_volume()
+        self.order_id.write(
+            {"card_id": self.card_id.id if self.card_id else False, "state": "done"}
+        )
+        self.order_id._compute_order_totals()
 
         return {
             "name": "Sales Orders Journal",
