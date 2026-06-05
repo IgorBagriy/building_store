@@ -64,8 +64,10 @@
                                     <td class="p-3 text-end text-info font-weight-bold">
                                         <t t-esc="card.total_sales_volume" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                     </td>
-                                    <td t-attf-class="p-3 text-end fw-bold #{'text-danger table-danger' if card.current_debt &gt; 0 else 'text-muted'}">
-                                        <t t-esc="card.current_debt" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                    <td class="p-3 text-end fw-bold">
+                                        <span t-attf-class="#{'text-danger' if card.current_debt &gt; 0 else 'text-muted'}">
+                                            <t t-esc="card.current_debt" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </span>
                                     </td>
                                 </tr>
                             </t>
